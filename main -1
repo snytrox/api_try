@@ -4,7 +4,7 @@ from uuid import UUID
 app=FastAPI()
 books_db = []
 
-@app.get("/books/",response_model=pydantic.Book_fetch)
+@app.get("/books/")
 async def get_books():
     return {"books": books_db}
 
