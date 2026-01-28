@@ -1,0 +1,12 @@
+from paydantic import BaseModel,Field
+from uuid import UUID, uuid4
+from typing import List
+class Book_Base(BaseModel):
+    name:str
+    writer: str
+
+class Book_Create(Book_Base):
+    pass
+
+class Book(Book_Base):
+    id:UUID= Field(default_factory=uuid4)
